@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>OMBD Search</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="custom.css">
+        <style>
+            .form-control{
+                width: 30%;
+                border-width: 1px;
+                border-color: grey;
+                border-style: solid;
+            }
+            
+            .form-control:hover{
+                border-color: blue;
+            }
+            
+            .form-icon{
+                width: 1.5vw;
+                height: 1.5vw;
+                align-content: center;
+                margin: 0.3vw;
+            }
+            
+            .textbox{
+                border : 0px;
+                width: 85%;
+                font-size: 1.3vw
+            }
+            
+            .textbox:focus{
+                outline: none;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h2 id="chumma">OMBD Search</h2>
+        <button type="button" onclick="UserAction()" >Click Me!</button>
+        <br>
+        <div class="form-control">
+            <input type="text" id="ip" class="textbox" onclick="myFunction()" onfocus="myFunction()" onkeypress="myFunction()" onmouseout="myFunction()">
+            <img class="form-icon" id="status" src="" alt="" style="float:right;"/>
+            <!--<img class="form-icon" src="tick1.png" alt="" style="float:right;"/> -->
+        </div>
+
+        <div id="test">
+            
+        </div>
+        
+        
+        <script type="text/javascript">
+            function myFunction()
+            {
+                var text = document.getElementById("ip").value;
+                var image = document.getElementById("status");
+                if(text !== "")
+                {
+                    image.src="./tick1.png";
+                }
+                else
+                {
+                    image.src="./tick2.svg";
+                }
+            }
+            function UserAction() {
+                var xhttp = new XMLHttpRequest();
+                var method = "POST";
+                var data = "?i=tt3896198&apikey=9244781f&t=" + document.getElementById("ip").value + "&plot=full&r=json";
+                var url = "http://www.omdbapi.com/" + data;
+                
+                console.log(url);
+                
+                xhttp.open(method, url, true);
+                xhttp.send(data);
+                
+                xhttp.onreadystatechange = function() {
+                     if (this.readyState === 4 && this.status === 200) {
+                         document.getElementById("test").innerHTML = this.responseText;
+                     }
+                };                
+            }
+        </script>
+        
+    </body>
+</html>

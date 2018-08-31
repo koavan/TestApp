@@ -1,0 +1,85 @@
+<html>
+    <head>
+	<title>Online Test App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="mystyle.css">
+	<link rel="stylesheet" href="w3-colors-flat.css">
+	<link rel="stylesheet" href="font-awesome.min.css">	
+        <link rel="stylesheet" href="custom.css">
+    </head>
+    <body style="background-color: #f6f8fa">
+        <div class="w3-container w3-flat-midnight-blue head-text" style="width: 100%;position: relative;top: 0;overflow: hidden;">
+            <p >Test App</p>
+        </div>
+        
+	<div class="w3-card text w3-white" style="width: 30%;top: 5%; left: 35%; position: relative;">
+            <div class="w3-container w3-flat-midnight-blue title-text">
+		<p>Sign-Up here!</p>
+            </div>
+            <form name="signup-form" class="w3-container" action="signupUser" method="POST"> 
+              <!--  <p class="little-text" style="color: red">All fields are mandatory</p> -->
+                <p>
+                    <label> First Name  </label>
+                    <input name="first-name" class="w3-input w3-text-grey" type="text" required style="width: 95%">
+                </p>
+                <p id="alert-fname" class="little-text w3-text-red" ></p>
+                
+                <p>
+                    <label>Last Name</label>
+                    <input name="last-name" class="w3-input w3-text-grey" type="text" required  style="width: 95%">
+                </p>
+                <p id="alert-lname" class="little-text w3-text-red" ></p>
+
+                <p>    
+                    <input name="gender" checked class="w3-radio" type="radio" name="gender" value="M" style="position: relative;left: 15%;width: 1.2vw">
+                    <label style="position: relative;left: 16%">Male</label>
+                    <input name="gender" class="w3-radio" type="radio" name="gender" value="F" style="position: relative;left: 40%;width: 1.2vw">
+                    <label style="position: relative;left: 41%">Female</label>
+                    
+                </p>
+                <p id="alert-gender" class="little-text w3-text-red" ></p>
+                
+                <p>
+                    <label>Date Of Birth</label>
+                    <input name="dob" class="w3-input w3-text-grey" type="date"  required  style="width: 95%">
+                </p>
+                <p id="alert-dob" class="little-text w3-text-red" ></p>
+                
+                <p>
+                    <label>Email</label>
+                    <input name="email" class="w3-input w3-text-grey" type="text"  required  style="width: 95%" onmouseout="emailValidate(document.getElementById('usermail').value)">
+                </p>
+                <p id="alert-email" class="little-text w3-text-red" ></p>
+                
+                <p>
+                    <label>Password</label>
+                    <input name="first-password" title="Password must contain at least 6 characters, including UPPER/lowercase and numbers" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" class="w3-input w3-text-grey" type="password" required  pattern =".{8,10}" title="Password must be of 8 to 10 characters." style="width: 95%">
+                </p>
+                <p id="alert-fpswd" class="little-text w3-text-red" ></p>
+                
+                <p>
+                    <label>Confirm Password</label>
+                    <input name="confirm-password" class="w3-input w3-text-grey" type="password" style="width: 95%" onmouseout="cpswdValidate()">
+                </p>
+                <p id="alert-cpswd" class="little-text w3-text-red" ></p>
+                
+                <p>
+                    <button type="reset" name="reset-btn" class="w3-button w3-flat-midnight-blue " style="float: left;width: 30%;">Reset</button>
+                    <button name="submit-btn" class="w3-button w3-flat-midnight-blue" style="float: right;width: 30%;position: relative;right: 10%;">Submit</button>
+                </p>
+            </form>
+            <footer class="w3-container w3-flat-midnight-blue">
+                
+            </footer>
+	</div>
+        <br>
+        <div class="page-footer w3-container w3-flat-midnight-blue little-text" style="position: relative;">
+            <p>Copyrights @CDC - Coding Team</p>
+        </div>
+        
+        <script src="myJavaScript.js">
+        </script>
+    </body>
+</html>
+
+

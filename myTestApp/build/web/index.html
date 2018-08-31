@@ -1,0 +1,51 @@
+<html>
+    <head>
+	<title>Online Test App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="mystyle.css">
+        <link rel="stylesheet" href="custom.css">
+	<link rel="stylesheet" href="w3-colors-flat.css">
+	<link rel="stylesheet" href="font-awesome.min.css">	  
+    </head>
+    <body style="background-color: #f6f8fa">
+        <div class="w3-container w3-flat-midnight-blue head-text" style="width: 100%">
+            <p style="float: left;">Test App</p>
+        </div>
+        
+	<div class="w3-card w3-white" style="width:30%;top:5%; left: 35%; position: relative;">
+            <div class="w3-container w3-flat-midnight-blue title-text">
+		<p>Log-in</p>
+            </div>
+            <form name="signin-form" class="w3-container text" action="loginUser" method="POST">
+                <p>
+                    <label>User Email</label>
+                    <input id="usermail" name="username" class="w3-input w3-text-grey" type="text" style="width: 90%" onmouseout="emailValidate(document.getElementById('usermail').value)">
+                </p>
+                <p id="alert-email" class="little-text w3-text-red" ></p>
+
+                <p>
+                    <label>Password</label>
+                    <input name="userpswd" class="w3-input w3-text-grey" type="password" style="width: 90%" onfocus="emailValidate(document.getElementById('usermail').value)" >
+                </p>
+                
+                <p style="margin-top: 1.5vw;">
+                    <button name="sub-btn" type="submit" value="signin" class="w3-button w3-flat-midnight-blue " style="width:25%;float: left;">Sign-In</button>
+                    <button name="sub-btn" value="newuser" class="w3-button w3-flat-midnight-blue " style="width:13vw;float: right;position: relative;right: 10%;">New User? Sign-Up</button>           
+                </p>
+            </form>
+            <footer class="w3-container text">
+                <p style="margin-top: 0"><a href="">Forgot password?</a></p>
+            </footer>
+	</div>
+        
+        <div class="page-footer w3-container w3-flat-midnight-blue little-text w3-center">
+            <!--<div class="w3-bar w3-flat-midnight-blue" style="width: 50%;height: 0.1vw;float: top;"></div>-->
+            <p>Copyrights @CDC - Coding Team</p>
+        </div>
+        
+        <script src="myJavaScript.js">
+        </script>
+    </body>
+</html>
+
+
